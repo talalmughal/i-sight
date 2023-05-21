@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Login() {
+export default function Signup() {
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
@@ -27,7 +27,7 @@ export default function Login() {
         }}
       >
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="text-center text-3xl font-extrabold">Sign In</h2>
+          <h2 className="text-center text-3xl font-extrabold">Sign up</h2>
         </div>
 
         <div className="h-[1px] w-8 bg-[#C0BDCC] mt-5 mb-10"></div>
@@ -71,60 +71,37 @@ export default function Login() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div
-                    className="w-5 h-5 border border-[#C0BDCC] rounded-md flex items-center justify-center"
-                    onClick={() => setRememberMe(!rememberMe)}
-                  >
-                    {rememberMe && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={4}
-                        stroke="currentColor"
-                        className="w-full h-full p-0.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 12.75l6 6 9-13.5"
-                        />
-                      </svg>
-                    )}
-                  </div>
+              <div>
+                <label htmlFor="password" className="block text-xs font-medium">
+                  Confirm password
+                </label>
 
-                  <label
-                    htmlFor="remember-me"
-                    className="ml-3.5 block text-xs font-normal text-[#7A86A1]"
-                  >
-                    Remember me
-                  </label>
-                </div>
-
-                <div className="text-sm">
-                  <a href="" className="text-xs font-normal">
-                    Forgot password?
-                  </a>
+                <div className="mt-3">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    placeholder="password"
+                    required
+                    className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                  />
                 </div>
               </div>
 
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
-                >
-                  Sign in
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
+              >
+                Sign up
+              </button>
             </form>
           </div>
 
           <p className="mt-5 text-center text-xs font-normal">
-            New user?{" "}
-            <Link href="/signup">
-              <span className="font-semibold hover:underline">Create an account</span>
+            Already have an account?{" "}
+            <Link href="/login">
+              <span className="font-semibold hover:underline">Login</span>
             </Link>
           </p>
         </div>
