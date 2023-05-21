@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Signup() {
+export default function Forget() {
   return (
     <div
       className="h-screen bg-gray-900 grid grid-flow-col items-center justify-center lg:justify-evenly text-white"
@@ -24,7 +24,9 @@ export default function Signup() {
         }}
       >
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="text-center text-3xl font-extrabold">Sign up</h2>
+          <h2 className="text-center text-3xl font-extrabold">
+            Recover account
+          </h2>
         </div>
 
         <div className="h-[1px] w-8 bg-[#C0BDCC] mt-5 mb-10"></div>
@@ -32,6 +34,11 @@ export default function Signup() {
         <div className="w-full">
           <div className="">
             <form className="space-y-9" action="/">
+              <span className="text-gray-300 text-xs font-light flex justify-center text-center">
+                We will send you an account recovery code on the email you enter
+                below
+              </span>
+
               <div>
                 <label htmlFor="email" className="block text-xs font-medium">
                   Your email
@@ -50,53 +57,17 @@ export default function Signup() {
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="password" className="block text-xs font-medium">
-                  Your password
-                </label>
-
-                <div className="mt-3">
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    placeholder="password"
-                    required
-                    className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-xs font-medium">
-                  Confirm password
-                </label>
-
-                <div className="mt-3">
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    placeholder="password"
-                    required
-                    className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
-                  />
-                </div>
-              </div>
-
               <button
                 type="submit"
                 className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
               >
-                Sign up
+                Get Code
               </button>
             </form>
           </div>
 
           <p className="mt-5 text-center text-xs font-normal">
-            Already have an account?{" "}
+            Remember your password?{" "}
             <Link href="/login">
               <span className="font-semibold hover:underline">Login</span>
             </Link>

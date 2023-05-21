@@ -34,7 +34,7 @@ export default function Login() {
 
         <div className="w-full">
           <div className="">
-            <form className="space-y-9" action="" method="POST">
+            <form className="space-y-9" action="/">
               <div>
                 <label htmlFor="email" className="block text-xs font-medium">
                   Your email
@@ -103,11 +103,9 @@ export default function Login() {
                   </label>
                 </div>
 
-                <div className="text-sm">
-                  <a href="" className="text-xs font-normal">
-                    Forgot password?
-                  </a>
-                </div>
+                <Link href="/forget">
+                  <span className="text-xs font-normal hover:underline">Forgot password?</span>
+                </Link>
               </div>
 
               <div className="pt-4">
@@ -124,7 +122,9 @@ export default function Login() {
           <p className="mt-5 text-center text-xs font-normal">
             New user?{" "}
             <Link href="/signup">
-              <span className="font-semibold hover:underline">Create an account</span>
+              <span className="font-semibold hover:underline">
+                Create an account
+              </span>
             </Link>
           </p>
         </div>
