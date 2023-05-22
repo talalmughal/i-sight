@@ -13,6 +13,20 @@ module.exports = {
           opacity: "0.7",
         },
         "blue-500": "#2745EA",
+        primary: "#2745EA",
+        background: "rgba(0,0,0,0.7)",
+        black: "#000000",
+        white: "#ffffff",
+      },
+      screens: {
+        1920: "1920px",
+      },
+      backgroundImage: {
+        footer:
+          "linear-gradient(151.46deg, rgba(39, 69, 234, 0.2) 2.82%, rgba(207, 123, 244, 0.2) 106.9%)",
+        landing: "url(/svgs/LandingBg.svg)",
+        landingBanner: "url(/svgs/LandingPageBannerBg.svg)",
+        coins: "linear-gradient(90deg, #2745EA 2.94%, #CF7BF4 100%)",
       },
     },
   },
