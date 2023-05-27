@@ -43,6 +43,7 @@ export default function Home() {
             height={100}
             width={100}
             className="w-full h-auto max-w-[450px] max-h-[460px] p-2 md:p-8"
+            quality={100}
           />
         </div>
       </div>
@@ -70,8 +71,8 @@ export default function Home() {
             <ServiceCard name={item.name} image={item.image} key={i} />
           ))}
         </div>
-        <div className="overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 py-16">
-          <div className="md:max-w-[50%] flex flex-col items-center md:items-start gap-8 px-4 md:px-0 md:pl-8 2xl:pl-[10%] 1920:pl-[20%]">
+        <div className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 py-16">
+          <div className="md:max-w-[50%] flex flex-col items-center md:items-start gap-8 px-4 md:px-8">
             <p className="text-[25px] md:text-[35px] lg:md:text-[48px] font-[600] leading-[40px] md:leading-[50px] xl:leading-[60px] text-center md:text-left">
               Newly Introduced crypto exchange
             </p>
