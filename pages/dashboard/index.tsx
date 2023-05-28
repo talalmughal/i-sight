@@ -1,11 +1,22 @@
 import React from "react";
-import { CARDS_DATA, DashboardCard } from "@/components/pages/dashboard";
+import {
+  BuySell,
+  CARDS_DATA,
+  DashboardCard,
+  QuickTransfer,
+  TradingMarket,
+} from "@/components/pages/dashboard";
 import { DashboardLayout } from "@/components/layout";
+import dynamic from "next/dynamic";
+
+const Graph = dynamic(() => import("@/components/pages/dashboard/Graph"), {
+  ssr: false,
+});
 
 const Dashboard = () => {
   return (
     <DashboardLayout>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <div className="flex flex-col gap-4">
           <p className="text-[24px] font-[700] leading-9 text-white">
             History Transaction
@@ -23,6 +34,15 @@ const Dashboard = () => {
               />
             ))}
           </div>
+          <Graph />
+          <TradingMarket />
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="text-[24px] font-[700] leading-9 text-white">
+            Exchange
+          </p>
+          <BuySell />
+          <QuickTransfer />
         </div>
       </div>
     </DashboardLayout>

@@ -30,3 +30,20 @@ body {
 }
 
 /* Loader Styles End*/
+
+.apexcharts-menu-item {
+    color: black !important;
+
+}
+.apexcharts-tooltip-title {
+        color: black !important;
+    }
+
+    .apexcharts-tooltip-series-group.apexcharts-active,
+        .apexcharts-tooltip-series-group:last-child{
+            color: black !important
+        }
+
+.apexcharts-tooltip.apexcharts-theme-light {
+    color: #000000 !important
+}

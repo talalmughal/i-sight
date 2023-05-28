@@ -93,7 +93,7 @@ export default function Home() {
         </div>
         <Footer />
       </div>
-      <div className="bg-footer flex items-center justify-center px-2 py-4">
+      <div className="bg-cardBg flex items-center justify-center px-2 py-4">
         <p className="text-sm md:text-base text-center">All Rights Reserved</p>
       </div>
     </div>
