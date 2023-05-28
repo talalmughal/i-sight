@@ -8,7 +8,7 @@ const Header = () => {
         Hi, Umar Khalid!
       </p>
       <div className="flex flex-row items-center gap-2 md:gap-4">
-        <div className="flex flex-row items-center gap-2 px-3 h-10 md:h-12 rounded-full bg-[#262932]">
+        <div className="flex flex-row items-center px-3 h-10 md:h-12 rounded-full bg-[#262932]">
           <Image
             src="/svgs/sidebar/Search.svg"
             alt="icon"
@@ -18,7 +18,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search"
-            className="h-full outline-none bg-[#262932] rounded-full"
+            className="h-full outline-none bg-[#262932] rounded-full px-2"
           />
         </div>
         <div className="h-10 w-10 md:h-12 md:w-12 grid place-items-center rounded-full bg-[#262932]">
@@ -34,7 +34,7 @@ const Header = () => {
           alt="cion"
           height={48}
           width={48}
-          className="h-10 w-10 md:h-12 md:w-12 "
+          className="hidden sm:block h-10 w-10 md:h-12 md:w-12 "
         />
       </div>
     </div>

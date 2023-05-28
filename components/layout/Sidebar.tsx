@@ -55,7 +55,7 @@ function SideBar() {
   }, [width]);
   return (
     <div
-      className={`flex min-h-screen ${
+      className={`h-[100vh] sticky top-0  flex min-h-screen ${
         collapsed ? "w-[100px] p-1 gap-4" : "w-[250px] p-4 gap-6"
       }  flex-col items-center bg-sidebarBg`}
     >
