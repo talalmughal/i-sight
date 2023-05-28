@@ -31,7 +31,7 @@ const Navbar = () => {
           className=""
         />
         {menuOpen && (
-          <div className="absolute right-0 bg-black flex flex-col items-center gap-6 px-2 py-4 rounded-md border-2">
+          <div className="absolute right-6 top-7 bg-black flex flex-col items-center gap-6 px-2 py-4 rounded-md border border-gray">
             {MENU_ITEMS.map((item) => (
               <p
                 key={item}

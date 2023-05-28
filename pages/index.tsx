@@ -37,13 +37,10 @@ export default function Home() {
             </p>
             <Button text="Join Now" className="w-[200px]" />
           </div>
-          <Image
+          <img
             src="/img/BannerSideImg.png"
             alt="bg"
-            height={100}
-            width={100}
             className="w-full h-auto max-w-[450px] max-h-[460px] p-2 md:p-8"
-            quality={100}
           />
         </div>
       </div>
