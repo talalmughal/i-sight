@@ -1,4 +1,4 @@
-import { themeColors } from './theme'
+import { themeColors } from "./theme";
 
 export const CandleStickChartData = {
   series: [
@@ -249,26 +249,30 @@ export const CandleStickChartData = {
   ],
   options: {
     chart: {
-      type: 'candlestick',
+      type: "candlestick",
       height: 350,
     },
     grid: {
       show: false,
     },
-    // title: {
-    //   text: 'CandleStick Chart',
-    //   align: 'left',
-    // },
     xaxis: {
-      type: 'datetime',
+      type: "datetime",
     },
     yaxis: {
       tooltip: {
         enabled: true,
       },
     },
+    plotOptions: {
+      candlestick: {
+        colors: {
+          upward: "#37CBB0",
+          downward: "#D82C60",
+        },
+      },
+    },
   },
-}
+};
 
 export const BarGraphData = {
   series: [
@@ -284,15 +288,9 @@ export const BarGraphData = {
       show: false,
     },
     chart: {
-      type: 'bar',
+      type: "bar",
       height: 150,
     },
-    // plotOptions: {
-    //   bar: {
-    //     borderRadius: 4,
-    //     horizontal: true,
-    //   },
-    // },
     dataLabels: {
       enabled: false,
     },
@@ -300,32 +298,27 @@ export const BarGraphData = {
       show: false,
     },
     colors: [themeColors.primary, themeColors.red],
-    // yaxis: {
-    //   tooltip: {
-    //     enabled: true,
-    //   },
-    // },
     xaxis: {
       categories: [
-        '01/21',
-        '02/21',
-        '03/21',
-        '04/21',
-        '05/21',
-        '06/21',
-        '07/21',
-        '08/21',
-        '09/21',
-        '10/21',
-        '11/21',
-        '12/21',
-        '01/22',
-        '02/22',
-        '03/22',
+        "01/21",
+        "02/21",
+        "03/21",
+        "04/21",
+        "05/21",
+        "06/21",
+        "07/21",
+        "08/21",
+        "09/21",
+        "10/21",
+        "11/21",
+        "12/21",
+        "01/22",
+        "02/22",
+        "03/22",
       ],
     },
   },
-}
+};
 
 export const AreaGraphData = {
   series: [
@@ -500,17 +493,17 @@ export const AreaGraphData = {
   ],
   options: {
     chart: {
-      type: 'area',
+      type: "area",
       height: 350,
     },
     dataLabels: {
       enabled: false,
     },
     stroke: {
-      curve: 'straight',
+      curve: "straight",
     },
     xaxis: {
-      type: 'datetime',
+      type: "datetime",
       axisBorder: {
         show: false,
       },
@@ -527,7 +520,7 @@ export const AreaGraphData = {
 
       labels: {
         style: {
-          colors: 'white',
+          colors: "white",
         },
         offsetY: 0,
         offsetX: 0,
@@ -544,11 +537,11 @@ export const AreaGraphData = {
     },
     tooltip: {
       x: {
-        format: 'yyyy',
+        format: "yyyy",
       },
       fixed: {
         enabled: false,
-        position: 'topRight',
+        position: "topRight",
       },
     },
     colors: [themeColors.primary, themeColors.red],
@@ -564,55 +557,4 @@ export const AreaGraphData = {
       },
     },
   },
-}
-
-export const LineGraphData = {
-  series: [
-    {
-      data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-    },
-  ],
-  options: {
-    chart: {
-      height: 350,
-      type: 'line',
-      zoom: {
-        enabled: false,
-      },
-      toolbar: {
-        show: false,
-      },
-    },
-    markers: {
-      colors: [themeColors.primary],
-    },
-    tooltip: {
-      enabled: true,
-      theme: 'dark',
-      custom: ({ series, seriesIndex, dataPointIndex }: any) => {
-        return (
-          '<div class="themeCard"><span class="p-2 flex flex-col space-y-1"><h6>Nov 2022, 01:54 pm</h6><h6 class="text-primary font-bold">$' +
-          series[seriesIndex][dataPointIndex] +
-          '</h6></span></div>'
-        )
-      },
-    },
-    colors: [themeColors.secondary],
-    dataLabels: {
-      enabled: false,
-    },
-    grid: {
-      show: false,
-    },
-    xaxis: {
-      crosshairs: {
-        stroke: {
-          color: themeColors.primary,
-          width: 1,
-          dashArray: 0,
-        },
-      },
-      categories: ['09:00 PM', '10:00 PM', '11:00 PM', '12:00 PM', '13:00 PM', '14:00 PM', '15:00 PM', '16:00 PM', '17:00 PM'],
-    },
-  },
-}
+};

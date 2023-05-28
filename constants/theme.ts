@@ -1,13 +1,13 @@
 const themeColors = {
-  primary: '#00FF75',
-  secondary: '#AB1BEE',
-  red: '#ED4B72',
+  primary: '#37CBB0',
+  secondary: '#D82C60',
+  red: '#D82C60',
   statsTabColor: {
-    green: '#00FF75',
-    pink: '#EC11FF',
-    slimygreen: '#85FFCC',
-    purple: '#AB1BEE',
-    blue: '#1B89EE',
+    green: '#37CBB0',
+    pink: '#D82C60',
+    slimygreen: '#37CBB0',
+    purple: '#D82C60',
+    blue: '#D82C60',
   },
 }
 

@@ -136,4 +136,4 @@ const Graph: React.FC<GraphProps> = (props) => {
   );
 };
 
-export default Graph
+export default Graph;
