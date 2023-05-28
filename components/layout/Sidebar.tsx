@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button } from "../elements";
 import { useWindowDimesions } from "@/hooks";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const SIDEBAR_DATA = [
   {
@@ -49,7 +50,7 @@ function SideBar() {
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-    if (width < 1024) {
+    if (width && width < 1024) {
       setCollapsed(true);
     } else {
       setCollapsed(false);
@@ -58,7 +59,7 @@ function SideBar() {
   return (
     <div
       className={`h-[100vh] sticky top-0  flex min-h-screen ${
-        collapsed ? "w-[100px] p-1 gap-4" : "w-[250px] p-4 gap-6"
+        collapsed ? "w-[100px] p-1 gap-8" : "w-[250px] p-4 gap-16"
       }  flex-col items-center bg-sidebarBg`}
     >
       {collapsed ? (
@@ -83,31 +84,36 @@ function SideBar() {
 
       <div
         className={`flex flex-col ${
-          collapsed ? "justify-center items-center" : ""
-        }  gap-4 w-full`}
+          collapsed ? "justify-center items-center" : "pl-12"
+        }  gap-10 w-full`}
       >
         {SIDEBAR_DATA.map((item, i) => (
-          <div
-            className="flex flex-row items-center gap-4 p-2  cursor-pointer"
+          <Link
             key={i}
-            onClick={() => setActiveRoute(item.name)}
+            href={item.name === "Strategies" ? "/form" : "/dashboard"}
           >
-            <Image
-              src={activeRoute === item.name ? item.iconActive : item.icon}
-              alt="icon"
-              height={20}
-              width={20}
-            />
-            <p
-              className={`${collapsed ? "hidden" : ""} ${
-                activeRoute === item.name
-                  ? "font-[700] text-primary    "
-                  : "font-[500] text-gray"
-              } text-base `}
+            <div
+              className="flex flex-row items-center gap-4 p- cursor-pointer"
+              key={i}
+              onClick={() => setActiveRoute(item.name)}
             >
-              {item.name}
-            </p>
-          </div>
+              <Image
+                src={activeRoute === item.name ? item.iconActive : item.icon}
+                alt="icon"
+                height={20}
+                width={20}
+              />
+              <p
+                className={`${collapsed ? "hidden" : ""} ${
+                  activeRoute === item.name
+                    ? "font-[700] text-primary    "
+                    : "font-[500] text-gray"
+                } text-base `}
+              >
+                {item.name}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
       <div
