@@ -5,7 +5,7 @@ import React from "react";
 const BuySell = () => {
   return (
     <div
-      className="max-w-[270px] flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white"
+      className="w-full mobile:max-w-[270px] flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white"
       style={{ border: "1px solid rgba(255, 255, 255, 0.5)" }}
     >
       <div className="flex flex-row items-center justify-between w-full gap-4 px-16">
@@ -33,7 +33,7 @@ const BuySell = () => {
           alt="cion"
           height={32}
           width={32}
-          className="absolute top-[35%] left-[40%]"
+          className="absolute top-[35%] left-[45%]"
         />
       </div>
       <Button text="Buy ETH" />

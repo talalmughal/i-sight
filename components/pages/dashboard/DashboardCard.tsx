@@ -37,7 +37,7 @@ const DashboardCard = ({
   icon,
 }: any) => (
   <div
-    className="group bg-cardsBg hover:bg-cardBg bg-cover w-[220px] md:w-[270px] h-[170px] md:h-[197px] flex flex-col justify-between rounded-[12px] p-4"
+    className="group bg-cardsBg hover:bg-cardBg bg-cover w-full mobile:w-[220px] md:max-w-[270px] h-[170px] md:h-[197px] flex flex-col justify-between rounded-[12px] p-4"
     style={{ border: "1px solid rgba(255, 255, 255, 0.5)" }}
   >
     <div className="flex flex-row items-center justify-between">

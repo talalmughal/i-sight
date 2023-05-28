@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "../elements";
 import { useWindowDimesions } from "@/hooks";
+import { useRouter } from "next/router";
 
 const SIDEBAR_DATA = [
   {
@@ -42,6 +43,7 @@ const SIDEBAR_DATA = [
 ];
 
 function SideBar() {
+  const router = useRouter();
   const [activeRoute, setActiveRoute] = useState("Dashboard");
   const { width } = useWindowDimesions();
   const [collapsed, setCollapsed] = useState(false);
@@ -60,9 +62,23 @@ function SideBar() {
       }  flex-col items-center bg-sidebarBg`}
     >
       {collapsed ? (
-        <Image src="/svgs/LogoSmall.svg" alt="logo" height={40} width={40} />
+        <Image
+          src="/svgs/LogoSmall.svg"
+          alt="logo"
+          height={40}
+          width={40}
+          onClick={() => router.push("/")}
+          className="cursor-pointer"
+        />
       ) : (
-        <Image src="/svgs/Logo.svg" alt="logo" height={55} width={130} />
+        <Image
+          src="/svgs/Logo.svg"
+          alt="logo"
+          height={55}
+          width={130}
+          onClick={() => router.push("/")}
+          className="cursor-pointer"
+        />
       )}
 
       <div

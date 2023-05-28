@@ -23,6 +23,7 @@ module.exports = {
       },
       screens: {
         1920: "1920px",
+        mobile: "500px",
       },
       backgroundImage: {
         footer:

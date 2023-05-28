@@ -2,6 +2,7 @@ import { Button } from "@/components/elements";
 import { Footer, Navbar, ServiceCard } from "@/components/pages/landing";
 import { Inter } from "next/font/google";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ const DATA = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="bg-gray-900 text-white">
       <div className="w-full bg-center bg-landingBanner bg-no-repeat bg-cover">
@@ -35,7 +37,11 @@ export default function Home() {
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book. It has survived{" "}
             </p>
-            <Button text="Join Now" className="w-[200px]" />
+            <Button
+              text="Join Now"
+              className="w-[200px]"
+              onClick={() => router.push("/signup")}
+            />
           </div>
           <img
             src="/img/BannerSideImg.png"
@@ -45,7 +51,7 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full bg-coins">
-        <div className="w-full max-w-[1440px] mx-auto flex flex-wrap items-center justify-between py-2 md:py-8 px-4 md:px-8">
+        <div className="w-full max-w-[1440px] mx-auto flex flex-wrap items-center justify-between py-2 md:py-8 px-4 md:px-8 gap-4">
           {[1, 2, 3, 4].map((item) => (
             <p key={item} className="text-[30px] lg:text-[40px]">
               Coin Icon
@@ -58,7 +64,7 @@ export default function Home() {
           <p className="text-center md:text-left text-[25px] md:text-[40px] leading-[40px] md:leading-[50px] capitalize">
             Best quality we provide With the Best services
           </p>
-          <p className="text-center text-sm md:text-base opacity-70">
+          <p className="text-left text-sm md:text-base opacity-70">
             Lorem Ipsum has been the industrys standard dummy text ever since
             the 1500s
           </p>
@@ -78,7 +84,11 @@ export default function Home() {
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book. It has survived{" "}
             </p>
-            <Button text="Join Now" className="w-[200px]" />
+            <Button
+              text="Join Now"
+              className="w-[200px]"
+              onClick={() => router.push("/signup")}
+            />
           </div>
           <Image
             src="/svgs/landing.svg"

@@ -1,14 +1,28 @@
 import { Button } from "@/components/elements";
+import { useOnClickOutside } from "@/hooks";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useRef, useState } from "react";
 
 const MENU_ITEMS = ["About Us", "What We Do", "Our Best Practices"];
 
 const Navbar = () => {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuRef = useRef<any>();
+  useOnClickOutside(menuRef, () => setMenuOpen(false));
+
   return (
     <div className="max-w-[1440px] m-auto relative flex flex-row items-center justify-between py-2 md:py-4 px-4 md:px-8">
-      <Image src="/svgs/Logo.svg" alt="logo" height={44} width={112} />
+      <Image
+        src="/svgs/Logo.svg"
+        alt="logo"
+        height={44}
+        width={112}
+        onClick={() => router.push("/")}
+        className="cursor-pointer"
+      />
       <div className="hidden md:flex flex-row items-center gap-4 md:gap-8">
         {MENU_ITEMS.map((item) => (
           <p
@@ -20,8 +34,12 @@ const Navbar = () => {
           </p>
         ))}
       </div>
-      <Button text="Sign In" className="hidden md:block" />
-      <div className="relative md:hidden ">
+      <Button
+        text="Sign In"
+        className="hidden md:block"
+        onClick={() => router.push("/login")}
+      />
+      <div className="relative md:hidden" ref={menuRef}>
         <Image
           src="/svgs/Menu.svg"
           alt="menu"

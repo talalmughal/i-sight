@@ -2,7 +2,7 @@ import React from "react";
 import { Loader } from "./Loader";
 import Image from "next/image";
 
-const PRIMARY = "bg-primary text-white";
+const PRIMARY = "bg-blue-500 text-white hover:bg-white hover:text-blue-500";
 
 const Button = ({
   text,

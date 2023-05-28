@@ -53,7 +53,7 @@ const Footer = () => {
         <div className="flex flex-col gap-2">
           {PLATFORMS.map((p) => (
             <p
-              className="text-sm md:text-base font-[400] cursor-pointer"
+              className="text-sm md:text-base font-[400] cursor-pointer opacity-60 hover:opacity-100"
               key={p}
             >
               {p}
@@ -66,7 +66,7 @@ const Footer = () => {
         <div className="flex flex-col gap-2">
           {ABOUT_US.map((p) => (
             <p
-              className="text-sm md:text-base font-[400] cursor-pointer"
+              className="text-sm md:text-base font-[400] cursor-pointer opacity-60 hover:opacity-100"
               key={p}
             >
               {p}
@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="flex flex-col gap-2">
           {SUPPORT.map((p) => (
             <p
-              className="text-sm md:text-base font-[400] cursor-pointer"
+              className="text-sm md:text-base font-[400] cursor-pointer opacity-60 hover:opacity-100"
               key={p}
             >
               {p}
@@ -91,10 +91,7 @@ const Footer = () => {
         <p className="text-sm md:text-base font-[600]">Address</p>
         <div className="flex flex-col gap-2">
           {ADDRESS.map((p) => (
-            <p
-              className="text-sm md:text-base font-[400] cursor-pointer"
-              key={p}
-            >
+            <p className="text-sm md:text-base font-[400]" key={p}>
               {p}
             </p>
           ))}

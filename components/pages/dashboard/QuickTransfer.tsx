@@ -6,7 +6,7 @@ const NAMES = ["James", "Olivia", "Natasha", "Simon", "Luke", "Abigail"];
 const QuickTransfer = () => {
   return (
     <div
-      className="max-w-[270px] flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white"
+      className="w-full mobile:max-w-[270px] flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white"
       style={{ border: "1px solid rgba(255, 255, 255, 0.5)" }}
     >
       <p className="text-[20px] font-[600] leading-[30px]">Quick Transfer</p>
