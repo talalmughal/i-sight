@@ -90,11 +90,10 @@ function SideBar() {
         {SIDEBAR_DATA.map((item, i) => (
           <Link
             key={i}
-            href={item.name === "Strategies" ? "/form" : "/dashboard"}
+            href={item.name === "Strategies" ? "/strategies" : "/dashboard"}
           >
             <div
               className="flex flex-row items-center gap-4 p- cursor-pointer"
-              key={i}
               onClick={() => setActiveRoute(item.name)}
             >
               <Image
