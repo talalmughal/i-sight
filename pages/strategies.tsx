@@ -8,7 +8,6 @@ import { useState } from "react";
 
 const Basic = () => {
   const [selectedBasic, setSelectedBasic] = useState<boolean>(true);
-  const [, setSelectedStrategy] = useState<boolean>(false);
 
   return (
     <DashboardLayout>
@@ -20,15 +19,7 @@ const Basic = () => {
         <div className="flex flex-col mt-4">
           <TabSwitch
             label1="Basic Settings"
-            onClick1={() => {
-              setSelectedBasic(true);
-              setSelectedStrategy(false);
-            }}
             label2="Strategy Building"
-            onClick2={() => {
-              setSelectedStrategy(true);
-              setSelectedBasic(false);
-            }}
             selected={selectedBasic ? 1 : 2}
           />
 
