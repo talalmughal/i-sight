@@ -43,10 +43,7 @@ const BuySell = () => {
 
 const BuySellInput = ({ icon, label }: any) => (
   <div className="flex flex-row items-center justify-between h-[48px] rounded-[8px] border-[1px] border-[#454547] w-full px-2 py-1">
-    <p
-      contentEditable
-      className="text-sm font-[700] leading-[22px] outline-none max-w-[70%] over"
-    >
+    <p className="text-sm font-[700] leading-[22px] outline-none max-w-[70%] over">
       0.187
     </p>
     <div className="flex flex-row items-center gap-2 cursor-pointer">

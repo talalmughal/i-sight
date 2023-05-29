@@ -25,7 +25,7 @@ const QuickTransfer = () => {
         ))}
       </div>
       <input
-        value="$123.45"
+        defaultValue="$123.45"
         type="text"
         placeholder="value"
         className="px-2 py-2 h-[40px] xl:h-[48px] bg-cardsBg rounded-[8px] border-[1px] border-[#454547]"
