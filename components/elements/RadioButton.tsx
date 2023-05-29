@@ -26,7 +26,7 @@ export const RadioButton = ({ name, label, options, defaultOption }: Props) => {
                   className="h-4 w-4 border-gray-300 text-blue-500 focus:ring-blue-500"
                 />
 
-                <span className="px-3 block text-base font-medium">
+                <span className="px-3 block text-base font-normal">
                   {option?.title}
                 </span>
               </label>

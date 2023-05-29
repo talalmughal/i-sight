@@ -32,7 +32,11 @@ const Basic = () => {
             selected={selectedBasic ? 1 : 2}
           />
 
-          {selectedBasic ? <BasicSettings /> : <StrategyBuilding />}
+          {selectedBasic ? (
+            <BasicSettings clickSave={() => setSelectedBasic(false)} />
+          ) : (
+            <StrategyBuilding />
+          )}
         </div>
       </div>
     </DashboardLayout>

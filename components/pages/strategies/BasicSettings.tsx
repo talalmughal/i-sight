@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { Button } from "@/components/elements";
 
-export const BasicSettings = () => {
+interface Props {
+  clickSave: () => void;
+}
+
+export const BasicSettings = ({ clickSave }: Props) => {
   const [gender, setGender] = useState("Choose your gender");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState<number>();
   const [occupation, setOccupation] = useState("");
   const [income, setIncome] = useState("Choose your montly income (Pounds)");
   const [liability, setLiability] = useState(
     "Choose your liability range (Pounds)"
   );
+
+  // scrolling to the top
+  useEffect(() => {
+    document.documentElement.click();
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8">
@@ -30,10 +40,10 @@ export const BasicSettings = () => {
         <span className="font-medium">Age</span>
 
         <input
-          type="text"
-          placeholder={age || "Enter your age"}
+          type="number"
+          placeholder={"Enter your age"}
           className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-3xl text-white"
-          onChange={(e) => setAge(e?.target?.value)}
+          onChange={(e) => setAge(e?.target?.valueAsNumber)}
         />
       </div>
 
@@ -73,7 +83,7 @@ export const BasicSettings = () => {
         />
       </div>
 
-      <div className="mt-16 mb-10">
+      <div className="mt-16 mb-10" onClick={clickSave}>
         <Button text="Save" />
       </div>
     </div>

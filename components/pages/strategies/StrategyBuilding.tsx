@@ -1,39 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, RadioButton } from "@/components/elements";
-
-const reasonOfInvestment = [
-  { id: "saving", title: "Saving" },
-  { id: "home", title: "Home" },
-  { id: "medical", title: "Medical" },
-  { id: "retirement", title: "Retirement" },
-];
-
-const targettedTime = [
-  { id: "1-5", title: "1-5 years" },
-  { id: "5-10", title: "5-10 years" },
-  { id: "10-15", title: "10-15 years" },
-  { id: "15-20", title: "15-20 years" },
-];
-
-const passiveKnowledge = [
-  { id: "yes", title: "Yes" },
-  { id: "no", title: "No" },
-];
-
-const pastExperience = [
-  { id: "yes", title: "Yes" },
-  { id: "no", title: "No" },
-];
-
-const interetedMarket = [
-  { id: "high", title: "High risk - High profit" },
-  { id: "mid", title: "Mid risk - Mid profit" },
-  { id: "low", title: "Low risk - Low profit" },
-];
+import {
+  reasonOfInvestment,
+  targettedTime,
+  passiveKnowledge,
+  pastExperience,
+  interetedMarket,
+} from "@/public/constants/RadioOptions";
 
 export const StrategyBuilding = () => {
   const [upfrontAmount, setUpfrontAmount] = useState<number>(0);
   const [monthlyAmount, setMonthlyAmount] = useState<number>(0);
+
+  // scrolling to the top
+  useEffect(() => {
+    document.documentElement.click();
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8 text-white">
