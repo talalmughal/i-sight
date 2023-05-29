@@ -26,7 +26,7 @@ const Graph: React.FC<GraphProps> = (props) => {
   const areaoptions: any = AreaGraphData.options;
   return (
     <div
-      className="w-full max-w-[700px] xl:max-w-[845px] flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white text-xs 2xl:text-base"
+      className="w-auto xxl:max-w-4xl xxxl:max-w-6xl xxxl:w-screen flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white text-xs 2xl:text-base"
       style={{ border: "1px solid rgba(255, 255, 255, 0.5)" }}
     >
       <div className="px-3 py-3">

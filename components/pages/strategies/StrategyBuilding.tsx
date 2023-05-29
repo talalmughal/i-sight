@@ -19,7 +19,7 @@ export const StrategyBuilding = () => {
   }, []);
 
   return (
-    <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8 text-white">
+    <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8 text-white max-w-6xl">
       {/* Reason of investment */}
       <RadioButton
         name={"reasonOfInvestment"}
@@ -69,7 +69,7 @@ export const StrategyBuilding = () => {
         <input
           type="number"
           placeholder={"Enter amount in Pounds"}
-          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-3xl text-white"
+          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-5xl text-white"
           onChange={(e) => setUpfrontAmount(e?.target?.valueAsNumber)}
         />
       </div>
@@ -83,7 +83,7 @@ export const StrategyBuilding = () => {
         <input
           type="number"
           placeholder={"Enter amount in Pounds"}
-          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-3xl text-white"
+          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-5xl text-white"
           onChange={(e) => setMonthlyAmount(e?.target?.valueAsNumber)}
         />
       </div>

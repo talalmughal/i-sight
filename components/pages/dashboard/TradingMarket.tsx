@@ -8,7 +8,7 @@ const HEADINGS = ["Token", "Symbol", "Last Price", "24h Change", "Market Cap"];
 const TradingMarket = () => {
   return (
     <div
-      className="max-w-[845px] flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white"
+      className="w-auto flex flex-col gap-4 rounded-[16px] bg-cardsBg p-2 md:p-4 text-white"
       style={{ border: "1px solid rgba(255, 255, 255, 0.5)" }}
     >
       <div className="flex flex-row items-center justify-between gap-4">

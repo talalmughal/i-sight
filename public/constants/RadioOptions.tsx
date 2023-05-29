@@ -24,6 +24,6 @@ export const pastExperience = [
 
 export const interetedMarket = [
   { id: "high", title: "High risk - High profit" },
-  { id: "mid", title: "Mid risk - Mid profit" },
+  { id: "mid", title: "Medium risk - Medium profit" },
   { id: "low", title: "Low risk - Low profit" },
 ];

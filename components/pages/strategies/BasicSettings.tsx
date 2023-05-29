@@ -22,7 +22,7 @@ export const BasicSettings = ({ clickSave }: Props) => {
   }, []);
 
   return (
-    <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8">
+    <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8 max-w-6xl">
       {/* Gender */}
       <div className="flex flex-col gap-2.5">
         <span className="font-medium">Gender</span>
@@ -42,7 +42,7 @@ export const BasicSettings = ({ clickSave }: Props) => {
         <input
           type="number"
           placeholder={"Enter your age"}
-          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-3xl text-white"
+          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-5xl text-white"
           onChange={(e) => setAge(e?.target?.valueAsNumber)}
         />
       </div>
@@ -54,7 +54,7 @@ export const BasicSettings = ({ clickSave }: Props) => {
         <input
           type="text"
           placeholder={occupation || "Enter your occupation"}
-          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-3xl text-white"
+          className="bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-5xl text-white"
           onChange={(e) => setOccupation(e?.target?.value)}
         />
       </div>

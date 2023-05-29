@@ -27,7 +27,7 @@ export const Dropdown = ({
     >
       <div className="full">
         <Menu.Button
-          className={`flex w-full items-center justify-between bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-3xl ${style}`}
+          className={`flex w-full items-center justify-between bg-[#262932] font-normal outline-none h-[50px] px-5 rounded-md max-w-5xl ${style}`}
         >
           {label}
 

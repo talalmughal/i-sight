@@ -21,7 +21,7 @@ export const TabSwitch = ({
   selected,
 }: Props) => {
   return (
-    <div className="flex flex-row items-center rounded-t-xl bg-[#27272a]">
+    <div className="flex flex-row items-center rounded-t-xl bg-[#27272a] max-w-6xl">
       <button
         className={selected === 1 ? selectedClass : unselectedClass}
         onClick={onClick1}

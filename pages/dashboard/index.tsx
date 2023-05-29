@@ -16,12 +16,12 @@ const Graph = dynamic(() => import("@/components/pages/dashboard/Graph"), {
 const Dashboard = () => {
   return (
     <DashboardLayout>
-      <div className="flex flex-col xl:flex-row gap-4">
+      <div className="flex flex-col xxl:flex-row gap-4">
         <div className="flex flex-col gap-4">
           <p className="text-[24px] font-[700] leading-9 text-white">
             History Transaction
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             {CARDS_DATA.map((card, i) => (
               <DashboardCard
                 key={i}
@@ -41,8 +41,10 @@ const Dashboard = () => {
           <p className="text-[24px] font-[700] leading-9 text-white">
             Exchange
           </p>
-          <BuySell />
-          <QuickTransfer />
+          <div className="flex flex-col md:flex-row xxl:flex-col gap-4">
+            <BuySell />
+            <QuickTransfer />
+          </div>
         </div>
       </div>
     </DashboardLayout>

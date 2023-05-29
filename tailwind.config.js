@@ -22,6 +22,8 @@ module.exports = {
         cardsBg: "#090909",
       },
       screens: {
+        xxl: "1440px",
+        xxxl: "1720px",
         1920: "1920px",
         mobile: "500px",
       },
