@@ -32,39 +32,37 @@ export default function Forget() {
         <div className="h-[1px] w-8 bg-[#C0BDCC] mt-5 mb-10"></div>
 
         <div className="w-full">
-          <div className="">
-            <form className="space-y-9" action="/">
-              <span className="text-gray-300 text-xs font-light flex justify-center text-center">
-                We will send you an account recovery code on the email you enter
-                below
-              </span>
+          <form className="space-y-9" action="/dashboard" method="POST">
+            <span className="text-gray-300 text-xs font-light flex justify-center text-center">
+              We will send you an account recovery code on the email you enter
+              below
+            </span>
 
-              <div>
-                <label htmlFor="email" className="block text-xs font-medium">
-                  Your email
-                </label>
+            <div>
+              <label htmlFor="email" className="block text-xs font-medium">
+                Your email
+              </label>
 
-                <div className="mt-3">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    placeholder="dummy@example.com"
-                    required
-                    className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
-                  />
-                </div>
+              <div className="mt-3">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="dummy@example.com"
+                  required
+                  className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                />
               </div>
+            </div>
 
-              <button
-                type="submit"
-                className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
-              >
-                Get Code
-              </button>
-            </form>
-          </div>
+            <button
+              type="submit"
+              className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
+            >
+              Get Code
+            </button>
+          </form>
 
           <p className="mt-5 text-center text-xs font-normal">
             Remember your password?{" "}
