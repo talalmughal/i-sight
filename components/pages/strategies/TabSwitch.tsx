@@ -1,9 +1,9 @@
 import React from "react";
 
 const selectedClass =
-  "text-white font-semibold text-lg rounded-t-xl bg-blue-600 leading-10 px-14 py-1.5 cursor-pointer";
+  "text-white font-semibold text-lg rounded-t-xl bg-blue-600 h-full w-1/2 sm:w-auto px-8 sm:px-14 py-4 cursor-pointer";
 const unselectedClass =
-  "text-white font-semibold text-lg px-14 py-2 cursor-pointer";
+  "text-white font-semibold text-lg h-full w-1/2 sm:w-auto px-8 sm:px-14 py-1.5 cursor-pointer";
 
 interface Props {
   label1: string;
