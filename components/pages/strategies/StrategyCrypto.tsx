@@ -1,62 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/elements";
-
-const CoinsData = [
-  {
-    name: "Bitcoin",
-    code: "BTC",
-    icon: "/img/strategy-crypto/BTC.png",
-  },
-  {
-    name: "Cardano",
-    code: "ADA",
-    icon: "/img/strategy-crypto/ADA.png",
-  },
-  {
-    name: "Binance Coin",
-    code: "BNB",
-    icon: "/img/strategy-crypto/BNB.png",
-  },
-  {
-    name: "Ethereum",
-    code: "ETH",
-    icon: "/img/strategy-crypto/ETH.png",
-  },
-  {
-    name: "Tether",
-    code: "USDT",
-    icon: "/img/strategy-crypto/USDT.png",
-  },
-  {
-    name: "Binance Coin",
-    code: "BNB",
-    icon: "/img/strategy-crypto/BNB.png",
-  },
-  {
-    name: "XRP",
-    code: "XRP",
-    icon: "/img/strategy-crypto/XRP.png",
-  },
-  {
-    name: "Dogecoin",
-    code: "DOGE",
-    icon: "/img/strategy-crypto/DOGE.png",
-  },
-  {
-    name: "Internet Comp",
-    code: "ICT",
-    icon: "/img/strategy-crypto/ICT.png",
-  },
-  {
-    name: "Cardano",
-    code: "ADA",
-    icon: "/img/strategy-crypto/ADA.png",
-  },
-];
+import { CoinsData } from "@/public/constants/CoinsData";
 
 export const StrategyCrypto = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 max-w-6xl">
       <span className="text-blue-500 text-2xl font-bold">Cryptocurrency</span>
 
       <span className="text-white text-sm font-medium">
@@ -89,10 +37,10 @@ export const StrategyCrypto = () => {
             </div>
           ))}
         </div>
+      </div>
 
-        <div className="mt-28">
-          <Button text="Next" />
-        </div>
+      <div className="mt-7 place-self-end w-full sm:w-auto">
+        <Button text="Next" />
       </div>
     </div>
   );

@@ -100,7 +100,7 @@ export const StrategyBuilding = () => {
       </div>
 
       <Link
-        className="mt-16 mb-10"
+        className="mt-16 mb-10 place-self-end sm:mr-4 w-full sm:w-auto"
         href={{ pathname: "/strategies/suggestions", query: { time } }}
       >
         <Button text="Save" />

@@ -83,7 +83,7 @@ export const BasicSettings = ({ clickSave }: Props) => {
         />
       </div>
 
-      <div className="mt-16 mb-10" onClick={clickSave}>
+      <div className="mt-16 mb-10 place-self-end sm:mr-4 w-full sm:w-auto" onClick={clickSave}>
         <Button text="Save" />
       </div>
     </div>

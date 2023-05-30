@@ -16,7 +16,7 @@ const Button = ({
   return (
     <button
       disabled={loading}
-      className={`min-w-[123px] px-4 rounded-[8px] h-[40px] xl:h-[45px] capitalize flex flex-row items-center justify-center gap-2 text-sm md:text-base font-medium ${PRIMARY} ${
+      className={`w-full sm:w-auto min-w-[123px] px-4 rounded-[8px] h-[52px] xl:h-[52px] capitalize flex flex-row items-center justify-center gap-2 text-sm md:text-base font-medium ${PRIMARY} ${
         loading ? "!opacity-60 cursor-not-allowed" : ""
       } ${className}`}
       {...rest}

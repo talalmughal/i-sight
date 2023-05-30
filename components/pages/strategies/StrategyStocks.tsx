@@ -1,52 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/elements";
-
-const StocksData = [
-  {
-    name: "Apple",
-    icon: "/img/strategy-stocks/Apple.png",
-  },
-  {
-    name: "Meta",
-    icon: "/img/strategy-stocks/Meta.png",
-  },
-  {
-    name: "Microsoft",
-    icon: "/img/strategy-stocks/Microsoft.png",
-  },
-  {
-    name: "Google",
-    icon: "/img/strategy-stocks/Google.png",
-  },
-  {
-    name: "Spotify",
-    icon: "/img/strategy-stocks/Spotify.png",
-  },
-  {
-    name: "ABNB",
-    icon: "/img/strategy-stocks/ABNB.png",
-  },
-  {
-    name: "Shopify",
-    icon: "/img/strategy-stocks/Shopify.png",
-  },
-  {
-    name: "Sony",
-    icon: "/img/strategy-stocks/Sony.png",
-  },
-  {
-    name: "Dropbox",
-    icon: "/img/strategy-stocks/Dropbox.png",
-  },
-  {
-    name: "PayPal",
-    icon: "/img/strategy-stocks/PayPal.png",
-  },
-];
+import { StocksData } from "@/public/constants/StocksData";
 
 export const StrategyStocks = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 max-w-6xl">
       <span className="text-blue-500 text-2xl font-bold">Stocks</span>
 
       <span className="text-white text-sm font-medium">
@@ -74,10 +32,10 @@ export const StrategyStocks = () => {
             </div>
           ))}
         </div>
+      </div>
 
-        <div className="mt-28">
-          <Button text="Next" />
-        </div>
+      <div className="mt-7 place-self-end w-full sm:w-auto">
+        <Button text="Next" />
       </div>
     </div>
   );
