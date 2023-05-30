@@ -3,9 +3,16 @@ interface Props {
   label: string;
   options: any[];
   defaultOption: string;
+  setValue: (value: string) => void;
 }
 
-export const RadioButton = ({ name, label, options, defaultOption }: Props) => {
+export const RadioButton = ({
+  name,
+  label,
+  options,
+  defaultOption,
+  setValue,
+}: Props) => {
   return (
     <div className="flex flex-col gap-2.5">
       <span className="text-sm font-medium">{label}</span>
@@ -24,6 +31,7 @@ export const RadioButton = ({ name, label, options, defaultOption }: Props) => {
                   type="radio"
                   defaultChecked={option?.id === defaultOption}
                   className="h-4 w-4 border-gray-300 text-blue-500 focus:ring-blue-500"
+                  onChange={() => setValue(option?.id)}
                 />
 
                 <span className="px-3 block text-base font-normal xl:w-48">

@@ -7,10 +7,16 @@ import {
   pastExperience,
   interetedMarket,
 } from "@/public/constants/RadioOptions";
+import Link from "next/link";
 
 export const StrategyBuilding = () => {
   const [upfrontAmount, setUpfrontAmount] = useState<number>(0);
   const [monthlyAmount, setMonthlyAmount] = useState<number>(0);
+  const [reason, setReason] = useState('');
+  const [time, setTime] = useState('1-5');
+  const [knowledge, setKnowledge] = useState('');
+  const [experience, setExperience] = useState('');
+  const [market, setMarket] = useState('');
 
   // scrolling to the top
   useEffect(() => {
@@ -26,6 +32,7 @@ export const StrategyBuilding = () => {
         label={"What is your reason of investment?"}
         options={reasonOfInvestment}
         defaultOption={"saving"}
+        setValue={setReason}
       />
 
       {/* Target to complete goal */}
@@ -34,6 +41,7 @@ export const StrategyBuilding = () => {
         label={"What is your target to complete the goal?"}
         options={targettedTime}
         defaultOption={"1-5"}
+        setValue={setTime}
       />
 
       {/* Passive knowledge */}
@@ -44,6 +52,7 @@ export const StrategyBuilding = () => {
         }
         options={passiveKnowledge}
         defaultOption={"yes"}
+        setValue={setKnowledge}
       />
 
       {/* Past experience */}
@@ -52,6 +61,7 @@ export const StrategyBuilding = () => {
         label={"Do you have any past experience with investment?"}
         options={pastExperience}
         defaultOption={"yes"}
+        setValue={setExperience}
       />
 
       {/* Interested market */}
@@ -60,6 +70,7 @@ export const StrategyBuilding = () => {
         label={"Which market are you primarily interested in?"}
         options={interetedMarket}
         defaultOption={"high"}
+        setValue={setMarket}
       />
 
       {/* Upfront amount */}
@@ -88,9 +99,12 @@ export const StrategyBuilding = () => {
         />
       </div>
 
-      <div className="mt-16 mb-10">
+      <Link
+        className="mt-16 mb-10"
+        href={{ pathname: "/strategies/suggestions", query: { time } }}
+      >
         <Button text="Save" />
-      </div>
+      </Link>
     </div>
   );
 };

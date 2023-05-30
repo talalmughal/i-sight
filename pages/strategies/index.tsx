@@ -6,7 +6,7 @@ import {
 } from "@/components/pages/strategies";
 import { useState } from "react";
 
-const Basic = () => {
+const Formulate = () => {
   const [selectedBasic, setSelectedBasic] = useState<boolean>(true);
 
   return (
@@ -34,4 +34,4 @@ const Basic = () => {
   );
 };
 
-export default Basic;
+export default Formulate;
