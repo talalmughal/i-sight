@@ -45,7 +45,7 @@ const Graph: React.FC<GraphProps> = (props) => {
                 }}
                 key={item.id}
               >
-                <h1 className="px-3 py-1"> {item.label}</h1>
+                <span className="px-3 py-1"> {item.label}</span>
               </p>
             ))}
           </div>
@@ -71,7 +71,7 @@ const Graph: React.FC<GraphProps> = (props) => {
                 }}
                 key={item}
               >
-                <h1 className=" px-3 py-1">{item}</h1>
+                <span className="px-3 py-1">{item}</span>
               </p>
             ))}
             <Image
