@@ -7,37 +7,37 @@ import Link from "next/link";
 
 const SIDEBAR_DATA = [
   {
-    name: "Dashboard",
+    name: "dashboard",
     icon: "/svgs/sidebar/Home.svg",
     iconActive: "/svgs/sidebar/HomeActive.svg",
   },
   {
-    name: "Analytics",
+    name: "analytics",
     icon: "/svgs/sidebar/Chart.svg",
     iconActive: "/svgs/sidebar/ChartActive.svg",
   },
   {
-    name: "My Portfolio",
+    name: "my portfolio",
     icon: "/svgs/sidebar/Document.svg",
     iconActive: "/svgs/sidebar/DocumentActive.svg",
   },
   {
-    name: "My Wallet",
+    name: "my wallet",
     icon: "/svgs/sidebar/Wallet.svg",
     iconActive: "/svgs/sidebar/WalletActive.svg",
   },
   {
-    name: "Strategies",
+    name: "strategies",
     icon: "/svgs/sidebar/Vector.svg",
     iconActive: "/svgs/sidebar/VectorActive.svg",
   },
   {
-    name: "Settings",
+    name: "settings",
     icon: "/svgs/sidebar/Setting.svg",
     iconActive: "/svgs/sidebar/SettingActive.svg",
   },
   {
-    name: "Logout",
+    name: "logout",
     icon: "/svgs/sidebar/Logout.svg",
     iconActive: "/svgs/sidebar/LogoutActive.svg",
   },
@@ -59,7 +59,7 @@ function SideBar() {
   return (
     <div
       className={`h-[100vh] sticky top-0  flex min-h-screen ${
-        collapsed ? "w-[100px] p-1 gap-8" : "w-[250px] p-4 gap-16"
+        collapsed ? "w-[100px] p-1 gap-8" : "w-[250px] gap-8 xxxl:gap-16"
       }  flex-col items-center bg-sidebarBg`}
     >
       {collapsed ? (
@@ -84,41 +84,50 @@ function SideBar() {
 
       <div
         className={`flex flex-col ${
-          collapsed ? "justify-center items-center" : "pl-12"
-        }  gap-10 w-full`}
+          collapsed ? "justify-center items-center" : "pl-10"
+        } gap-6 xxxl:gap-10 w-full`}
       >
         {SIDEBAR_DATA.map((item, i) => (
           <Link
             key={i}
-            href={item.name === "Strategies" ? "/strategies" : "/dashboard"}
+            href={item.name === "strategies" ? "/strategies" : "/dashboard"}
+            className={`relative px-8 py-2 ${collapsed ? "" : "pl-4"}`}
           >
-            <div
-              className="flex flex-row items-center gap-4 p- cursor-pointer"
-              onClick={() => setActiveRoute(item.name)}
-            >
+            <div className="flex flex-row items-center gap-4 p- cursor-pointer">
               <Image
-                src={activeRoute === item.name ? item.iconActive : item.icon}
+                src={
+                  router.asPath.includes(item.name)
+                    ? item.iconActive
+                    : item.icon
+                }
                 alt="icon"
                 height={20}
                 width={20}
               />
               <p
                 className={`${collapsed ? "hidden" : ""} ${
-                  activeRoute === item.name
+                  router.asPath.includes(item.name)
                     ? "font-[700] text-primary    "
                     : "font-[500] text-gray"
-                } text-base `}
+                } text-base capitalize`}
               >
                 {item.name}
               </p>
+              {router.asPath.includes(item.name) && !collapsed ? (
+                <Image
+                  src="/svgs/dashboard/MenuActive.svg"
+                  alt=""
+                  height={45}
+                  width={8}
+                  className="absolute right-0"
+                />
+              ) : null}
             </div>
           </Link>
         ))}
       </div>
       <div
-        className={`${
-          collapsed ? "hidden" : ""
-        } bg-helpCenter bg-cover bg-no-repeat flex flex-col items-center justify-start gap-4 rounded-[8px] p-4`}
+        className={`hidden xl:flex bg-helpCenter bg-cover bg-no-repeat flex-col items-center justify-start gap-4 rounded-[8px] p-4 mx-4`}
       >
         <Image
           src="/svgs/sidebar/Question.svg"
