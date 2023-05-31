@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/elements";
 import { StocksData } from "@/public/constants/StocksData";
+import { useRouter } from "next/router";
 
 export const StrategyStocks = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col gap-4 max-w-6xl">
       <span className="text-blue-500 text-2xl font-bold">Stocks</span>
@@ -13,7 +16,7 @@ export const StrategyStocks = () => {
         in stocks, and here are the specific stocks we suggest you to explore.
       </span>
 
-      <div className="border border-gray text-sm bg-transparent p-6 sm:p-8 rounded-xl flex flex-col gap-8 text-white max-w-6xl mt-4">
+      <div className="border border-gray text-sm bg-cardsBg p-6 sm:p-8 rounded-xl flex flex-col gap-8 text-white max-w-6xl mt-4">
         <div className="flex flex-wrap gap-7">
           {StocksData?.map((stock, i) => (
             <div
@@ -34,7 +37,10 @@ export const StrategyStocks = () => {
         </div>
       </div>
 
-      <div className="mt-7 place-self-end w-full sm:w-auto">
+      <div
+        className="mt-7 place-self-end w-full sm:w-auto"
+        onClick={() => router.push("/trading/test")}
+      >
         <Button text="Next" />
       </div>
     </div>

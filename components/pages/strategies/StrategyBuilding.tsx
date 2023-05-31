@@ -25,7 +25,7 @@ export const StrategyBuilding = () => {
   }, []);
 
   return (
-    <div className="border border-gray border-t-0 text-sm bg-transparent p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8 text-white max-w-6xl">
+    <div className="border border-gray border-t-0 text-sm bg-cardsBg p-6 sm:px-14 sm:py-10 rounded-b-xl flex flex-col gap-8 text-white max-w-6xl">
       {/* Reason of investment */}
       <RadioButton
         name={"reasonOfInvestment"}

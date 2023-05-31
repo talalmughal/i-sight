@@ -558,3 +558,72 @@ export const AreaGraphData = {
     },
   },
 };
+
+export const LineGraphData = {
+  series: [
+    {
+      data: [10, 0, 57, 85, 6, 50, 49, 39, 98, 77, 15, 86, 92, 28, 34],
+    },
+  ],
+  options: {
+    chart: {
+      type: "line",
+      zoom: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    markers: {
+      colors: ["#2745EA"],
+    },
+    tooltip: {
+      enabled: true,
+      theme: "dark",
+      custom: ({ series, seriesIndex, dataPointIndex }: any) => {
+        return (
+          '<div class="themeCard"><span class="p-2 flex flex-col space-y-1"><h6>Nov 2022, 01:54 pm</h6><h6 class="text-white text-base font-bold">$' +
+          series[seriesIndex][dataPointIndex] +
+          "</h6></span></div>"
+        );
+      },
+    },
+    colors: ["#2745EA"],
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      show: false,
+    },
+    xaxis: {
+      labels: {
+        style: {
+          colors: "transparent",
+        },
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: "transparent",
+        },
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    stroke: {
+      curve: "smooth",
+    },
+  },
+};

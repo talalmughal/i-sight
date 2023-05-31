@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/elements";
 import { CoinsData } from "@/public/constants/CoinsData";
+import { useRouter } from "next/router";
 
 export const StrategyCrypto = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col gap-4 max-w-6xl">
       <span className="text-blue-500 text-2xl font-bold">Cryptocurrency</span>
@@ -14,7 +17,7 @@ export const StrategyCrypto = () => {
         explore.
       </span>
 
-      <div className="border border-gray text-sm bg-transparent p-6 sm:p-8 rounded-xl flex flex-col gap-8 text-white max-w-6xl mt-4">
+      <div className="border border-gray text-sm bg-cardsBg p-6 sm:p-8 rounded-xl flex flex-col gap-8 text-white max-w-6xl mt-4">
         <div className="flex flex-wrap gap-7">
           {CoinsData?.map((coin, i) => (
             <div
@@ -39,7 +42,10 @@ export const StrategyCrypto = () => {
         </div>
       </div>
 
-      <div className="mt-7 place-self-end w-full sm:w-auto">
+      <div
+        className="mt-7 place-self-end w-full sm:w-auto"
+        onClick={() => router.push("/trading/test")}
+      >
         <Button text="Next" />
       </div>
     </div>
