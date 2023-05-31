@@ -3,6 +3,8 @@ import { useState } from "react";
 
 export default function Login() {
   const [rememberMe, setRememberMe] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div
@@ -48,6 +50,7 @@ export default function Login() {
                   placeholder="dummy@example.com"
                   required
                   className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                  onChange={(e) => setEmail(e?.target?.value)}
                 />
               </div>
             </div>
@@ -66,6 +69,7 @@ export default function Login() {
                   placeholder="password"
                   required
                   className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                  onChange={(e) => setPassword(e?.target?.value)}
                 />
               </div>
             </div>
@@ -109,14 +113,29 @@ export default function Login() {
               </Link>
             </div>
 
-            <div className="pt-4">
-              <button
-                type="submit"
-                className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
-              >
-                Sign in
-              </button>
-            </div>
+            {email !== "" &&
+            email.match(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            ) &&
+            password !== "" ? (
+              <Link href={"/dashboard"}>
+                <button
+                  type="submit"
+                  className="flex w-full mt-4 h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
+                >
+                  Sign in
+                </button>
+              </Link>
+            ) : (
+              <div>
+                <button
+                  type="submit"
+                  className="flex w-full mt-4 h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
+                >
+                  Sign in
+                </button>
+              </div>
+            )}
           </form>
 
           <p className="mt-5 text-center text-xs font-normal">

@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Signup() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   return (
     <div
       className="h-screen bg-gray-900 grid grid-flow-col items-center justify-center lg:justify-evenly text-white"
@@ -45,6 +50,7 @@ export default function Signup() {
                   placeholder="dummy@example.com"
                   required
                   className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                  onChange={(e) => setEmail(e?.target?.value)}
                 />
               </div>
             </div>
@@ -63,6 +69,7 @@ export default function Signup() {
                   placeholder="password"
                   required
                   className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                  onChange={(e) => setPassword(e?.target?.value)}
                 />
               </div>
             </div>
@@ -81,16 +88,35 @@ export default function Signup() {
                   placeholder="password"
                   required
                   className="block w-full rounded-md bg-transparent text-xs border border-white h-12 py-3.5 px-5 outline-none"
+                  onChange={(e) => setConfirmPassword(e?.target?.value)}
                 />
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="flex w-full h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
-            >
-              Sign up
-            </button>
+            {email !== "" &&
+            email.match(
+              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            ) &&
+            password !== "" &&
+            confirmPassword !== "" ? (
+              <Link href={"/dashboard"}>
+                <button
+                  type="submit"
+                  className="flex w-full mt-9 h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
+                >
+                  Sign up
+                </button>
+              </Link>
+            ) : (
+              <div>
+                <button
+                  type="submit"
+                  className="flex w-full mt-4 h-12 justify-center items-center rounded-md bg-white text-blue-500 hover:text-white hover:bg-blue-500 text-base font-bold"
+                >
+                  Sign up
+                </button>
+              </div>
+            )}
           </form>
 
           <p className="mt-5 text-center text-xs font-normal">
