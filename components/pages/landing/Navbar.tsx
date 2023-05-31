@@ -1,6 +1,7 @@
 import { Button } from "@/components/elements";
 import { useOnClickOutside } from "@/hooks";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 
@@ -34,11 +35,9 @@ const Navbar = () => {
           </p>
         ))}
       </div>
-      <Button
-        text="Sign In"
-        className="hidden md:block"
-        onClick={() => router.push("/login")}
-      />
+      <Link href={"/login"}>
+        <Button text="Sign In" className="hidden md:block" />
+      </Link>
       <div className="relative md:hidden" ref={menuRef}>
         <Image
           src="/svgs/Menu.svg"
@@ -49,7 +48,7 @@ const Navbar = () => {
           className=""
         />
         {menuOpen && (
-          <div className="absolute right-6 top-7 bg-black flex flex-col items-center gap-6 px-2 py-4 rounded-md border border-gray">
+          <div className="absolute right-0 top-8 bg-black flex flex-col gap-8 px-6 py-6 rounded-lg border border-[#334155]">
             {MENU_ITEMS.map((item) => (
               <p
                 key={item}
@@ -58,7 +57,9 @@ const Navbar = () => {
                 {item}
               </p>
             ))}
-            <Button text="Sign In" />
+            <Link href={"/login"}>
+              <Button text="Sign In" className="max-h-[45px]" />
+            </Link>
           </div>
         )}
       </div>

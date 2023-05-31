@@ -18,7 +18,7 @@ export const TradingModal = ({ open, setOpen }: Props) => {
         How would you like to continue with trading?
       </span>
 
-      <div className="flex flex-row gap-5 mt-10">
+      <div className="flex flex-col sm:flex-row gap-5 mt-10">
         <div className="mt-2 w-min" onClick={() => router.push("/trading")}>
           <Button text="Start now" className="min-w-[200px]" />
         </div>

@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 const SplineChart = dynamic(
-  () => import("@/components/pages/strategies/SplineChart"),
+  () => import("@/components/pages/trading/SplineChart"),
   {
     ssr: false,
   }
@@ -39,6 +39,17 @@ const Data = ({ label, styles }: DataProps) => {
 
 const Test = () => {
   const [showTradingModal, setShowTradingModal] = useState(false);
+  const [timeSelected, setTimeSelected] = useState({
+    id: "day",
+    label: "Today",
+  });
+
+  const times = [
+    { id: "day", label: "Today" },
+    { id: "week", label: "This Week" },
+    { id: "month", label: "This Month" },
+    { id: "year", label: "This Year" },
+  ];
 
   return (
     <DashboardLayout>
@@ -97,8 +108,26 @@ const Test = () => {
               £7,033.22
             </span>
 
-            <div className="-ml-8 p-0 m-0">
+            <div className="-ml-8 sm:-mt-6">
               <SplineChart />
+            </div>
+
+            <div className="hidden sm:grid grid-flow-row grid-cols-4 space-x-3 -mt-8">
+              {times.map((item) => (
+                <p
+                  onClick={() => setTimeSelected(item)}
+                  className={`cursor-pointer rounded-[8px] text-sm flex justify-center items-center ${
+                    timeSelected.id === item.id && "themeCard"
+                  }`}
+                  style={{
+                    backgroundColor:
+                      timeSelected.id === item.id ? "rgba(67,67,67,0.5)" : "",
+                  }}
+                  key={item.id}
+                >
+                  <span className="px-3 py-1"> {item.label}</span>
+                </p>
+              ))}
             </div>
           </div>
 
@@ -112,7 +141,7 @@ const Test = () => {
             Trending Market
           </span>
 
-          <div className="grid grid-flow-row grid-cols-10 md:grid-cols-11">
+          <div className="hidden md:grid grid-flow-row grid-cols-10 md:grid-cols-11">
             <Label label="Name" styles="col-span-2 md:col-span-3" />
             <Label label="Marketcup" />
             <Label label="Balance" />
@@ -123,20 +152,16 @@ const Test = () => {
             <Label label="Today" />
           </div>
 
-          <div className="h-[1px] w-full bg-[#454547] -my-3"></div>
+          <div className="hidden md:block h-[1px] w-full bg-[#454547] -my-3"></div>
 
-          <div className="grid grid-flow-row gap-6">
+          <div className="hidden md:grid grid-flow-row gap-6">
             {TradingMarket?.map((market, i) => (
               <div
                 key={i}
                 className="grid grid-cols-10 md:grid-cols-11 items-center"
               >
                 <div className="col-span-2 md:col-span-3 flex flex-row gap-7 items-center">
-                  <img
-                    src={market?.icon}
-                    alt="icon"
-                    className="w-8 h-8 hidden md:block"
-                  />
+                  <img src={market?.icon} alt="icon" className="w-8 h-8" />
 
                   <Data label={market?.name} />
                 </div>
@@ -148,6 +173,73 @@ const Test = () => {
                 <Data label={market?.month} styles="text-[#F93E3E]" />
                 <Data label={market?.year} />
                 <Data label={market?.today} styles="text-[#3EF967]" />
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap sm:grid sm:grid-flow-row sm:grid-cols-2 gap-7 md:hidden">
+            {TradingMarket?.map((market, i) => (
+              <div
+                key={i}
+                className="w-full h-auto border border-gray rounded-xl flex flex-col justify-center items-center py-6 px-6 gap-2"
+              >
+                <img src={market?.icon} alt="icon" className="w-14 h-14" />
+
+                <div className="flex flex-col w-full mt-6 gap-3">
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="Name" />
+                    <Data label={market?.name} />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="Marketcup" />
+                    <Data label={market?.marketcup} />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="Balance" />
+                    <Data label={market?.balance} />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="Price" />
+                    <Data label={market?.price} />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="7 Days" />
+                    <Data label={market?.week} styles="text-[#3EF967]" />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="30 Days" />
+                    <Data label={market?.month} styles="text-[#F93E3E]" />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="1 Year" />
+                    <Data label={market?.year} />
+                  </div>
+
+                  <div className="md:hidden h-[1px] w-full bg-[#454547]"></div>
+
+                  <div className="grid grid-flow-row grid-cols-2 w-full items-center">
+                    <Label label="Today" />
+                    <Data label={market?.today} styles="text-[#3EF967]" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>

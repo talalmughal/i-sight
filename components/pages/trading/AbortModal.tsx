@@ -18,7 +18,7 @@ export const AbortModal = ({ open, setOpen }: Props) => {
         Are you sure you want to forfeit?
       </span>
 
-      <div className="flex flex-row gap-5 mt-10">
+      <div className="flex flex-col sm:flex-row gap-5 mt-10">
         <div className="mt-2 w-min" onClick={() => router.push("/dashboard")}>
           <Button text="Abort" className="min-w-[200px]" />
         </div>

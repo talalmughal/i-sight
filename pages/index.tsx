@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/elements";
 import { Footer, Navbar, ServiceCard } from "@/components/pages/landing";
 import { Inter } from "next/font/google";
