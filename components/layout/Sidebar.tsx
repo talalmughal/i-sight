@@ -91,7 +91,7 @@ function SideBar() {
           <Link
             key={i}
             href={item.name === "strategies" ? "/strategies" : "/dashboard"}
-            className={`relative px-8 py-2 ${collapsed ? "" : "pl-4"}`}
+            className={`relative py-2 ${collapsed ? "px-2" : "px-8 pl-4"}`}
           >
             <div className="flex flex-row items-center gap-4 p- cursor-pointer">
               <Image
