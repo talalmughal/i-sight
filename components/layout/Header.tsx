@@ -1,12 +1,96 @@
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+interface Props {
+  activeTab?: string;
+}
 
-const Header = () => {
+const Header = ({ activeTab }: Props) => {
+  const router = useRouter();
+  const [active, setActive] = useState(
+    activeTab && activeTab !== "" ? activeTab : "Home"
+  );
+
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
-      <p className="text-lg md:text-[24px] font-[500] leading-10">
-        Hi, Adam Johnson!
-      </p>
+      <div className="flex gap-8">
+        <Image
+          src="/svgs/Logo.svg"
+          alt="logo"
+          height={55}
+          width={130}
+          onClick={() => router.push("/")}
+          className="cursor-pointer mr-4"
+        />
+
+        <button
+          onClick={() => {
+            setActive("Home");
+            router.push("/dashboard");
+          }}
+        >
+          <span
+            className={`text-xl lg:text-3xl font-bold ${
+              active === "Home"
+                ? "text-white"
+                : "text-[#94a3b8] hover:text-[#e2e8f0]"
+            }`}
+          >
+            Home
+          </span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActive("Courses");
+            router.push("/courses");
+          }}
+        >
+          <span
+            className={`text-xl lg:text-3xl font-bold ${
+              active === "Courses"
+                ? "text-white"
+                : "text-[#94a3b8] hover:text-[#e2e8f0]"
+            }`}
+          >
+            Courses
+          </span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActive("News");
+            router.push("/news");
+          }}
+        >
+          <span
+            className={`text-xl lg:text-3xl font-bold ${
+              active === "News"
+                ? "text-white"
+                : "text-[#94a3b8] hover:text-[#e2e8f0]"
+            }`}
+          >
+            News
+          </span>
+        </button>
+
+        <button
+          onClick={() => {
+            setActive("Wishlist");
+            router.push("/wishlist");
+          }}
+        >
+          <span
+            className={`text-xl lg:text-3xl font-bold ${
+              active === "Wishlist"
+                ? "text-white"
+                : "text-[#94a3b8] hover:text-[#e2e8f0]"
+            }`}
+          >
+            Wishlist
+          </span>
+        </button>
+      </div>
       <div className="flex flex-row items-center gap-2 md:gap-4">
         <div className="flex flex-row items-center px-3 h-10 md:h-12 rounded-full bg-[#262932] -mr-5 md:-mr-7">
           <Image

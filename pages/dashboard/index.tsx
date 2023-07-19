@@ -8,6 +8,7 @@ import {
 } from "@/components/pages/dashboard";
 import { DashboardLayout } from "@/components/layout";
 import dynamic from "next/dynamic";
+import { Button } from "@/components/elements";
 
 const Graph = dynamic(() => import("@/components/pages/dashboard/Graph"), {
   ssr: false,
@@ -15,37 +16,13 @@ const Graph = dynamic(() => import("@/components/pages/dashboard/Graph"), {
 
 const Dashboard = () => {
   return (
-    <DashboardLayout>
-      <div className="flex flex-col xxl:flex-row gap-4">
-        <div className="flex flex-col gap-4">
-          <p className="text-[24px] font-[700] leading-9 text-white">
-            History Transaction
-          </p>
-          <div className="flex flex-col md:flex-row gap-4">
-            {CARDS_DATA.map((card, i) => (
-              <DashboardCard
-                key={i}
-                name={card.name}
-                amount={card.amount}
-                profit={card.profit}
-                percentage={card.percentage}
-                graph={card.graph}
-                icon={card.icon}
-              />
-            ))}
-          </div>
-          <Graph />
-          <TradingMarket />
-        </div>
-        <div className="flex flex-col gap-4">
-          <p className="text-[24px] font-[700] leading-9 text-white">
-            Exchange
-          </p>
-          <div className="flex flex-col md:flex-row xxl:flex-col gap-4">
-            <BuySell />
-            <QuickTransfer />
-          </div>
-        </div>
+    <DashboardLayout activeTab="Home">
+      <div className="w-full h-full flex flex-col gap-4 items-center justify-center m-auto">
+        <Button text="Create Strategy" />
+
+        <p className="font-medium">OR</p>
+
+        <Button text="Create Custom Strategy" />
       </div>
     </DashboardLayout>
   );

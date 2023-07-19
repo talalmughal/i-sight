@@ -1,13 +1,16 @@
 import React from "react";
-import { SideBar } from "./Sidebar";
 import { Header } from "./Header";
 
-const DashboardLayout = ({ children }: any) => {
+interface Props {
+  activeTab?: string;
+  children: any;
+}
+
+const DashboardLayout = ({ activeTab, children }: Props) => {
   return (
     <div className="relative flex flex-row">
-      <SideBar />
-      <div className="min-h-screen p-4 pl-6 pr-8 bg-background text-white w-[calc(100vw-50px)] mobile:w-[calc(100vw-100px)] lg:w-[calc(100vw-250px)] flex flex-col gap-14">
-        <Header />
+      <div className="min-h-screen w-full p-4 pl-6 pr-8 bg-background text-white flex flex-col gap-14">
+        <Header activeTab={activeTab} />
         {children}
       </div>
     </div>

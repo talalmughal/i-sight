@@ -90,7 +90,7 @@ export default function Home() {
         <div className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 pt-16">
           <div className="md:max-w-[47%] flex flex-col items-center md:items-start gap-8 px-4 md:px-8">
             <p className="text-[25px] md:text-[35px] lg:md:text-[48px] font-[600] leading-[40px] md:leading-[50px] xl:leading-[60px] text-center md:text-left">
-              Experience the Future of Investment Strategies with i-sight.{" "}
+              Experience the Future of Investment Strategies with i-sight{" "}
             </p>
             <p className="text-sm md:text-base leading-6 md:leading-8 text-center md:text-left">
               Sign up today to get Early access to our platform.{" "}
