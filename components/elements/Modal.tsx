@@ -1,52 +1,42 @@
-import { Dialog, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
+import { useOnClickOutside } from "@/hooks";
+import React, { useRef } from "react";
 
-interface Props {
-  open: boolean;
-  setOpen: any;
-  children: any;
-}
-
-export const Modal = ({ open, setOpen, children }: Props) => {
+const Modal = ({
+  open,
+  handleClose,
+  children,
+  title,
+  className,
+  style,
+  childrenClass,
+}: any) => {
+  const ref: any = useRef();
+  useOnClickOutside(ref, () => handleClose());
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        onClose={() => {
-          setOpen(false);
-        }}
-      >
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-100"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-100"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+    <>
+      {open && (
+        <div
+          className="w-screen h-screen z-50 right-0 top-0 fixed shadow bg-background flex justify-center items-center m-0"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.8)",
+            margin: "0px",
+          }}
         >
-          <div className="fixed inset-0 bg-[#171717] bg-opacity-80 transition-opacity" />
-        </Transition.Child>
-
-        <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          <div
+            className={`relative bg-background text-white rounded-[0.5rem] p-4 xl:px-6 2xl:px-12 border-[1px] border-white ${className}`}
+            ref={ref}
+            style={style}
+          >
+            <p className="text-lg xl:text-2xl font-bold w-full py-2">{title}</p>
+            <div
+              className={`flex flex-col items-center justify-center w-full h-full gap-4  ${childrenClass}`}
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-cardsBg text-left shadow-xl transition-all sm:my-8 w-[565px] h-[308px] flex flex-col items-center justify-center">
-                {children}
-              </Dialog.Panel>
-            </Transition.Child>
+              {children}
+            </div>
           </div>
         </div>
-      </Dialog>
-    </Transition.Root>
+      )}
+    </>
   );
 };
+export { Modal };
