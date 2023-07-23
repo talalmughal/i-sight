@@ -33,19 +33,24 @@ export const QUESTIONS = [
         id: 6,
         question: "How much you can invest today?",
         answer: "",
-        type: 'number'
+        type: 'number',
+        placeholder: 'Initial Investment'
     },
     {
         id: 7,
         question: "How much additional amount you can invest later?",
         answer: "",
-        type: 'number'
+        type: 'number',
+        placeholder: 'Additional Investment'
+
     },
     {
         id: 8,
         question: "Ideal time for you to mature this investment?",
         answer: "",
-        type: 'text'
+        type: 'text',
+        placeholder: 'Ideal time for you to mature this investment'
+
     },
     {
         id: 9,

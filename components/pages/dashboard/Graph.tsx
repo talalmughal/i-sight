@@ -74,13 +74,14 @@ const Graph: React.FC<GraphProps> = (props) => {
                 <span className="px-3 py-1">{item}</span>
               </p>
             ))}
-            <Image
+            <button>Add to Wishlist</button>
+            {/* <Image
               src="/img/fullScreen.png"
               width={15}
               height={15}
               alt="icon"
               className="cursor-pointer"
-            />
+            /> */}
           </div>
           <div className="flex lg:hidden space-x-3 items-center">
             {typesMobile.map((item) => (
